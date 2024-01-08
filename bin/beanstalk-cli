@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Vstm\BeanstalkCli\Commands;
+
+$application = new Application();
+
+// map the default `list` command to `commands`
+$listCommand = $application->get('list');
+$listCommand->setName('commands');
+$application->add($listCommand);
+$application->setDefaultCommand('commands');
+
+// hide the `completion` command
+if ($application->has('completion')) {
+    $application->get('completion')->setHidden();
+}
+
+$commands =  Commands::getCommands();
+foreach ($commands as $command) {
+    $application->add($command);
+}
+
+$application->run();

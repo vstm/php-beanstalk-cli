@@ -1,0 +1,14 @@
+{
+  "banner": [
+    "This file is part of the beanstalk-cli project.",
+    "",
+    "(c) Stefan Vetsch <s@svetsch.ch>",
+    "",
+    "This source file is subject to the MIT license that is bundled",
+    "with this source code in the file LICENSE."
+  ],
+  "compactors": [
+    "KevinGH\\Box\\Compactor\\Json",
+    "KevinGH\\Box\\Compactor\\Php"
+  ]
+}
