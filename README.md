@@ -30,7 +30,7 @@ $ podman run --rm -v $(which composer):/usr/local/bin/composer -v $PWD:$PWD -w $
 - [ ] Write a short README
 - [ ] Implement config files for defaults (namely `host` and `port`)
 - [x] Abstraction for commands, so they can reuse the beanstalk host and port settings
-- [ ] Watch & List separation (the basically do the same, but list is contained in watch)
+- [x] Watch & List separation (the basically do the same, but list is contained in watch)
     - Maybe only make list and then add a watch option
 - [x] Implement kick command
 - [x] Implement kick-job command
