@@ -46,4 +46,5 @@ $ podman run --rm -v $(which composer):/usr/local/bin/composer -v $PWD:$PWD -w $
 - [x] Implement kick command
 - [x] Implement kick-job command
 - [x] Implement clear command
-- [ ] Implement peek command
+- [x] Implement peek command
+- [x] Implement delete-job command

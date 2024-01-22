@@ -2,9 +2,7 @@
 
 namespace Vstm\BeanstalkCli\Command;
 
-use Pheanstalk\Contract\PheanstalkManagerInterface;
 use Pheanstalk\Pheanstalk;
-use Pheanstalk\Values\Job;
 use Pheanstalk\Values\TubeName;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -20,16 +18,6 @@ class ClearCommand extends AbstractPheanstalkCommand
         parent::configure();
         $this->addOption('state', null,InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED, 'States to clear out', ['delayed', 'buried', 'ready']);
         $this->addArgument('tube', InputArgument::REQUIRED | InputArgument::IS_ARRAY, 'Payload of job');
-    }
-
-    private static function peekJob(PheanstalkManagerInterface $pheanstalk, string $state): ?Job
-    {
-        return match ($state) {
-            'delayed' => $pheanstalk->peekDelayed(),
-            'buried' => $pheanstalk->peekBuried(),
-            'ready' => $pheanstalk->peekReady(),
-            default => null,
-        };
     }
 
     private static function clearJobs(Pheanstalk $pheanstalk, string $state): int
