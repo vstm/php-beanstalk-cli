@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "pda/pheanstalk",
-            "version": "v5.0.2",
+            "version": "v5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pheanstalk/pheanstalk.git",
-                "reference": "bee66a8afa75c601ca659abba4f03dca39cfb20b"
+                "reference": "773412de6ecb51e9ec8076b1325ad0bcf03de605"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pheanstalk/pheanstalk/zipball/bee66a8afa75c601ca659abba4f03dca39cfb20b",
-                "reference": "bee66a8afa75c601ca659abba4f03dca39cfb20b",
+                "url": "https://api.github.com/repos/pheanstalk/pheanstalk/zipball/773412de6ecb51e9ec8076b1325ad0bcf03de605",
+                "reference": "773412de6ecb51e9ec8076b1325ad0bcf03de605",
                 "shasum": ""
             },
             "require": {
@@ -68,9 +68,9 @@
             ],
             "support": {
                 "issues": "https://github.com/pheanstalk/pheanstalk/issues",
-                "source": "https://github.com/pheanstalk/pheanstalk/tree/v5.0.2"
+                "source": "https://github.com/pheanstalk/pheanstalk/tree/v5.0.4"
             },
-            "time": "2023-11-23T15:31:55+00:00"
+            "time": "2024-01-22T14:38:01+00:00"
         },
         {
             "name": "psr/container",

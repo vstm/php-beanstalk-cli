@@ -2,7 +2,6 @@
 
 namespace Vstm\BeanstalkCli\Command;
 
-use Pheanstalk\Exception\MalformedResponseException;
 use Pheanstalk\Values\TubeName;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -32,13 +31,7 @@ class KickCommand extends AbstractPheanstalkCommand
             $tubeName = new TubeName($tube);
             $pheanstalk->useTube($tubeName);
 
-            try {
-                $jobsKicked = $pheanstalk->kick($maxKicks);
-            } catch (MalformedResponseException $e) {
-                // the response is most likely not that malformed pheanstalk just doesn't
-                // recognize the number 0 as a number
-                $jobsKicked = 0;
-            }
+            $jobsKicked = $pheanstalk->kick($maxKicks);
             $output->writeln(sprintf('%s: Kicked %d jobs', $tube, $jobsKicked));
         }
 
