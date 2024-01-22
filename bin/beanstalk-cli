@@ -3,7 +3,7 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
-use Symfony\Component\Console\Application;
+use Vstm\BeanstalkCli\Application;
 use Vstm\BeanstalkCli\Commands;
 
 $application = new Application();
