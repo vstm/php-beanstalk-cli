@@ -9,7 +9,7 @@ It's using the marvelous [Pheanstalk](https://github.com/pheanstalk/pheanstalk) 
 The easiest way to install beanstalk-cli is to just download the phar from the [latest release](https://github.com/vstm/php-beanstalk-cli/releases/latest), make it executable and put it in some bin directory. For non-root install it makes sense to create a bin directory in your home directory and just add that to the `$PATH` environment variable.
 
 ```bash
-curl --output beanstalk-cli https://github.com/vstm/php-beanstalk-cli/releases/download/latest/beanstalk-cli.phar
+curl --location --output beanstalk-cli https://github.com/vstm/php-beanstalk-cli/releases/latest/download/beanstalk-cli.phar
 chmod a+x beanstalk-cli
 sudo mv beanstalk-cli /usr/local/bin/ # or the bin directory of your choice
 ```
@@ -39,7 +39,7 @@ $ podman run --rm -v $(which composer):/usr/local/bin/composer -v $PWD:$PWD -w $
 
 - [ ] Write a short README
 - [ ] Implement config files for defaults (namely `host` and `port`)
-- [ ] Improve the release process (testing, store version somewhere where it can be read/displayed by the command)
+- [x] Improve the release process (testing, store version somewhere where it can be read/displayed by the command)
 - [x] Abstraction for commands, so they can reuse the beanstalk host and port settings
 - [x] Watch & List separation (the basically do the same, but list is contained in watch)
     - Maybe only make list and then add a watch option
